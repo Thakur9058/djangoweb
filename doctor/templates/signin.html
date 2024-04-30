@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signin</title>
+    <style>
+        body {
+        background-image: url("/static/back.jpg");
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        
+      }
+      nav {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      nav ul li {
+        display: inline;
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        display: inline-block;
+      }
+      nav ul li a:hover {
+        background-color: #555;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+      }
+   
+    h1{
+        text-align:center;
+        font:larger;
+    }
+    form{
+        text-align:center;
+    
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+          <ul>
+            <li><a href="/home/">Home</a></li>
+            <li><a href="/doctor/">Doctor</a></li>
+            <li><a href="/patient/">Patient</a></li>
+          </ul>
+        </div>
+      </nav>
+    {% if error_message %}
+         <p style ="color: red">{{ error_message }}</p>
+     {% endif %}
+<h1>Login for Doctor</h1>
+<form action ="" method ="POST">{% csrf_token %}
+    <br> 
+         username:<input type ="text" name ="name" id="em">
+    </br>
+    <br>
+        Password:<input type ="password" name="password"id="pa">
+    </br>
+    <br>  
+       <button type="submit"  >Signin</button><button type="button" id ="sbtn"><a href="/doctor/up">Signup</a></button>
+    </br>
+    
+    
+</form>
+</body>
+</html>

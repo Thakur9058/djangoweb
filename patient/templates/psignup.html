@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign up</title>
+    <style>
+        body {
+            background-image: url("/static/back.jpg");
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+          }
+          nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+          }
+          nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+          }
+          nav ul li {
+            display: inline;
+          }
+          nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+          }
+          nav ul li a:hover {
+            background-color: #555;
+          }
+          .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+          }
+          h1 {
+            text-align: center;
+          }
+        
+   
+    h1{
+        text-align:center;
+        font:larger;
+    }
+    form{
+        text-align:center;
+    
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+          <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/doctor/">Doctor</a></li>
+            <li><a href="/patient/">Patient</a></li>
+          </ul>
+        </div>
+      </nav>
+     {% if error_message %}
+         <p style ="color: red">{{ error_message }}</p>
+     {% endif %}
+
+<h1>Signup for a Patient</h1>
+    <form action =" "  method="POST">{% csrf_token %}
+        <br>
+         NAME:<input type ="text" name ="name" id="na">
+       </br>
+        <br>
+         username: <input type ="text" name ="username",id="us">
+       </br>
+        <br>
+         Email:<input type ="text" name ="Email" id="em">
+       </br>
+       <br>
+         Image:<input type="file" id="myFile" name="image">
+    </br>
+    <br>
+        Address:<input type ="address" name="address"id="pa">
+       </br>
+       <br>
+        Password:<input type ="password" name="password"id="pa">
+       </br>
+       <br>
+        Confirm Password:<input type ="password" name="Confirm_password"id="pa">
+       </br>
+      <br>  
+       <button type="submit">Signup</button><button type="button" id ="sbtn"><a href="/patient/">Signin</a></button>
+      </br>
+    
+        
+        
+    </form>
+
+</body>
+</html>
